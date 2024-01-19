@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
 
 # Load the necessary packages
 import torch
@@ -14,18 +10,13 @@ from speckcn2.mlmodels import get_resnet50
 from speckcn2.mlops import train, score
 from speckcn2.histos import tags_distribution
 
-# In[2]:
 
-
-
-# In[3]:
 
 # Set hyperparameters
 final_epoch = 5
 batch_size = 32
 learning_rate = 0.001
 
-# In[4]:
 
 # Set the screen parameters that will select the data to be used
 nscreens = 8
@@ -33,16 +24,11 @@ original_resolution = 1024
 # which correspond to the following directory
 datadirectory = f'{nscreens}screens_{original_resolution}x{original_resolution}'
 
-# In[5]:
-
-
-# In[6]:
 
 # Set the device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f'Using {device}.')
 
-# In[7]:
 
 # Define the transformation to apply to each image
 transform = transforms.Compose([
@@ -63,17 +49,14 @@ all_images, all_tags = prepare_data(datadirectory,
                                     nimg_print=5,
                                     nreps=2)
 
-# In[9]:
 
 # Normalize the tags between 0 and 1
 dataset, normalize_tag, recover_tag = normalize_tags(all_images, all_tags)
 
-# In[10]:
 
 # Split the data in training and testing
 train_loader, test_loader = train_test_split(dataset, batch_size, 0.8)
 
-# In[11]:
 
 # Load the model that you want to use
 model, last_model_state = get_resnet50(nscreens, datadirectory)
@@ -81,13 +64,11 @@ model, last_model_state = get_resnet50(nscreens, datadirectory)
 # and set the model to run on the device
 model = model.to(device)
 
-# In[12]:
 
 # Define the loss function and optimizer
 criterion = torch.nn.MSELoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
-# In[13]:
 
 # Train the model...
 model, average_loss = train(model, last_model_state, final_epoch, train_loader,

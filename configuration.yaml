@@ -3,14 +3,16 @@ speckle:
   original_res: 1024
   centercrop: 410
   resize: 256
-  speckreps: 15
-  datadirectory: /scratch/sciarella/males/8screens_1024x1024
+  speckreps: 1
+  #datadirectory: /scratch/sciarella/males/8screens_1024x1024
+  datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/8screens_1024x1024
 model:
-  name: resnet50
+  name: ModelA
+  type: resnet50
   save_every: 100
 hyppar:
-  maxepochs: 200
-  batch_size: 64
+  maxepochs: 3
+  batch_size: 54
   lr: 0.001
   loss: MSELoss
   optimizer: Adam

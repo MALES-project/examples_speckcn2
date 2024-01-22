@@ -13,4 +13,4 @@
 
 source /scratch/sciarella/.virtualenvs/males-blue/bin/activate
 
-python Prototype.py 
+python Prototype_2.py 

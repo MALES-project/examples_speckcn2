@@ -59,8 +59,8 @@ transform = transforms.Compose([
 # Load or preprocess the data
 all_images, all_tags = prepare_data(datadirectory,
                                     transform,
-                                    nimg_print=5,
-                                    nreps=2)
+                                    nimg_print=15,
+                                    nreps=config['speckle']['speckreps'])
 
 
 # In[7]:

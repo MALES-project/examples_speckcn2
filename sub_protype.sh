@@ -1,8 +1,8 @@
 #!/bin/sh
 #
 #SBATCH --job-name=MALES-prototype
-#SBATCH --output=MALES-prototype.out
-#SBATCH --error=MALES-prototype.err
+#SBATCH --output=slurm/slurm-MALES-prototype.out
+#SBATCH --error=slurm/slurm-MALES-prototype.err
 #SBATCH --partition=gpu
 #SBATCH --time=01:00:00
 #SBATCH --ntasks=1

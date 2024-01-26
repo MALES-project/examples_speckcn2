@@ -1,11 +1,16 @@
 speckle:
   nscreens: 8
   original_res: 1024
+  #datadirectory: /scratch/sciarella/males/8screens_1024x1024
+  datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/8screens_1024x1024
+preproc:
+  polresize: 2048
+  polarize: true
+  equivariant: true
+  randomrotate: false
   centercrop: 410
   resize: 256
   speckreps: 1
-  #datadirectory: /scratch/sciarella/males/8screens_1024x1024
-  datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/8screens_1024x1024
 model:
   name: ModelA
   type: resnet50

@@ -5,8 +5,6 @@
 
 # Load the necessary packages
 import torch
-import torchvision.transforms as transforms
-
 from speckcn2.io import load_config
 from speckcn2.preprocess import prepare_data, normalize_tags, train_test_split
 from speckcn2.mlmodels import setup_model, setup_loss, setup_optimizer
@@ -32,24 +30,10 @@ print(f'Using {device}.', flush=True)
 
 # In[5]:
 
-# Define the transformation to apply to each image
-transform = transforms.Compose([
-    # Randomly rotate the image, since it is symmetric
-    transforms.RandomRotation(degrees=(-180, 180)),
-    # Take only the center of the image
-    transforms.CenterCrop(config['speckle']['centercrop']),
-    # Optionally, downscale it
-    transforms.Resize(config['speckle']['resize']),
-    transforms.ToTensor(),
-])
-
-# In[6]:
-
 # Load or preprocess the data
 all_images, all_tags = prepare_data(config,
-                                    transform,
                                     nimg_print=15,
-                                    nreps=config['speckle']['speckreps'])
+                                    nreps=config['preproc']['speckreps'])
 
 # In[7]:
 

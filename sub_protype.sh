@@ -11,6 +11,6 @@
 #SBATCH --gpus-per-task=1
 #SBATCH --account=research-AE-SPE
 
-source /scratch/sciarella/.virtualenvs/males-blue/bin/activate
+source /home/sciarella/.virtualenvs/males-blue/bin/activate
 
-python Prototype_2.py 
+python Prototype_2.py $1 

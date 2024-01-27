@@ -1,21 +1,17 @@
 speckle:
   nscreens: 8
   original_res: 1024
-  #datadirectory: /scratch/sciarella/males/8screens_1024x1024
   datadirectory: /scratch/sciarella/males/MALES_Dataset1
-  #datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/8screens_1024x1024
-  #datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/MALES_Dataset1
 preproc:
-  #polresize: 2048
   polresize: 1024
-  polarize: true
-  equivariant: true
+  polarize: false
+  equivariant: false
   randomrotate: false
   centercrop: 410
   resize: 256
   speckreps: 1
 model:
-  name: ModelA
+  name: ModelCart
   type: resnet50
   save_every: 100
   pretrained: true

@@ -4,6 +4,7 @@
 # In[1]:
 
 # Load the necessary packages
+import sys
 import torch
 from speckcn2.io import load_config
 from speckcn2.preprocess import prepare_data, normalize_tags, train_test_split
@@ -14,8 +15,8 @@ from speckcn2.postprocess import tags_distribution
 # In[2]:
 
 # Load the configuration file
-#config = load_config(sys.argv[1])
-config = load_config('configuration.yaml')
+config = load_config(sys.argv[1])
+#config = load_config('configuration.yaml')
 
 # In[3]:
 

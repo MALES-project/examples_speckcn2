@@ -1,7 +1,8 @@
 speckle:
   nscreens: 8
   original_res: 1024
-  datadirectory: /scratch/sciarella/males/MALES_Dataset1
+    #datadirectory: /scratch/sciarella/males/MALES_Dataset1
+  datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/MALES_Dataset1
 preproc:
   polresize: 1024
   polarize: false
@@ -10,7 +11,8 @@ preproc:
   centercrop: 410
   resize: 256
   speckreps: 1
-  dataname: all_images_ModelCart.pt
+    #dataname: all_images_ModelCart.pt
+  dataname: all_images_ModelA.pt
 model:
   name: ModelCart_18_noPretrain
   type: resnet18

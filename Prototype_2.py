@@ -7,7 +7,7 @@
 import sys
 import torch
 from speckcn2.io import load_config
-from speckcn2.preprocess import prepare_data, normalize_tags, train_test_split
+from speckcn2.preprocess import prepare_data, normalize_imgs_and_tags, train_test_split
 from speckcn2.mlmodels import setup_model, setup_loss, setup_optimizer
 from speckcn2.mlops import train, score
 from speckcn2.postprocess import tags_distribution
@@ -39,7 +39,9 @@ all_images, all_tags = prepare_data(config,
 # In[7]:
 
 # Normalize the tags between 0 and 1
-dataset, normalize_tag, recover_tag = normalize_tags(all_images, all_tags)
+#dataset, normalize_tag, recover_tag = normalize_tags(all_images, all_tags)
+dataset, normalize_img, recover_img, normalize_tag, recover_tag = normalize_imgs_and_tags(
+    all_images, all_tags)
 
 # In[8]:
 

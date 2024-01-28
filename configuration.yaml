@@ -1,26 +1,27 @@
 speckle:
   nscreens: 8
   original_res: 1024
-  #datadirectory: /scratch/sciarella/males/8screens_1024x1024
-  datadirectory: /scratch/sciarella/males/MALES_Dataset1
-  #datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/8screens_1024x1024
+    #datadirectory: /scratch/sciarella/males/8screens_1024x1024
+  #datadirectory: /scratch/sciarella/males/MALES_Dataset1
+  datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/8screens_1024x1024
   #datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/MALES_Dataset1
 preproc:
   #polresize: 2048
   polresize: 1024
-  polarize: true
+  polarize: false
   equivariant: true
   randomrotate: false
   centercrop: 410
   resize: 256
   speckreps: 1
+  dataname: all_images_test.pt
 model:
   name: ModelA
   type: resnet50
   save_every: 100
   pretrained: true
 hyppar:
-  maxepochs: 500
+  maxepochs: 5
   batch_size: 64
   lr: 0.001
   loss: MSELoss

@@ -1,8 +1,9 @@
 #!/bin/sh
-#
-#SBATCH --job-name=MALES-prototype
-#SBATCH --output=slurm/slurm-MALES-prototype.out
-#SBATCH --error=slurm/slurm-MALES-prototype.err
+
+RUN_NAME='ResNet50'
+#SBATCH --job-name=MALES-${RUN_NAME}
+#SBATCH --output=slurm/slurm-MALES-${RUN_NAME}.out
+#SBATCH --error=slurm/slurm-MALES-${RUN_NAME}.err
 #SBATCH --partition=gpu
 #SBATCH --time=01:00:00
 #SBATCH --ntasks=1
@@ -11,6 +12,8 @@
 #SBATCH --gpus-per-task=1
 #SBATCH --account=research-AE-SPE
 
-source /home/sciarella/.virtualenvs/males-blue/bin/activate
+module load 2023r1
+module load python/3.9.8
+module load py-pip
 
-python Prototype_2.py $1 
+python Prototype.py $1 

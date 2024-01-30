@@ -16,8 +16,8 @@ preproc:
   speckreps: 1
   dataname: all_images_test.pt
 model:
-  name: Modelscnn8
-  type: scnnC8
+  name: ModelAA
+  type: resnet50
   save_every: 100
   pretrained: true
 hyppar:

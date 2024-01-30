@@ -9,20 +9,20 @@ preproc:
   #polresize: 2048
   polresize: 1024
   polarize: false
-  equivariant: true
-  randomrotate: false
+  equivariant: false
+  randomrotate: true
   centercrop: 410
   resize: 256
-  speckreps: 1
-  dataname: all_images_cart256.pt
+  speckreps: 10
+  dataname: all_images_cart256_10rot.pt
 model:
   name: Model
-  type: small_scnnC16
-  save_every: 10
+  type: resnet50
+  save_every: 100
   pretrained: true
 hyppar:
-  maxepochs: 500
-  batch_size: 32
+  maxepochs: 1000
+  batch_size: 64
   lr: 0.0001
   loss: MSELoss
   optimizer: Adam

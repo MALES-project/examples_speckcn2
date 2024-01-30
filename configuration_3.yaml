@@ -17,7 +17,7 @@ preproc:
   dataname: all_images_cart256.pt
 model:
   name: Model
-  type: small_scnnC16
+  type: scnnC8
   save_every: 10
   pretrained: true
 hyppar:

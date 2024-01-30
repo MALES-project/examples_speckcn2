@@ -10,7 +10,7 @@ from speckcn2.io import load_config
 from speckcn2.preprocess import prepare_data, normalize_imgs_and_tags, train_test_split
 from speckcn2.mlmodels import setup_model, setup_loss, setup_optimizer
 from speckcn2.mlops import train, score
-from speckcn2.postprocess import tags_distribution
+from speckcn2.postprocess import tags_distribution, plot_loss
 
 # In[2]:
 
@@ -67,7 +67,7 @@ optimizer = setup_optimizer(config, model)
 
 # Train the model...
 model, average_loss = train(model, last_model_state, config, train_loader,
-                            device, optimizer, criterion)
+                            test_loader, device, optimizer, criterion)
 print(f'Finished Training, Loss: {average_loss:.5f}', flush=True)
 
 # In[12]:
@@ -80,3 +80,5 @@ test_tags = score(model, test_loader, device, criterion, recover_tag,
 
 # Print some statistics of the screen tags
 tags_distribution(config, dataset, test_tags, device)
+
+plot_loss(config, model, datadirectory)

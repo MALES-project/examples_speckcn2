@@ -6,11 +6,7 @@
 # Load the necessary packages
 import sys
 import torch
-from speckcn2.io import load_config
-from speckcn2.preprocess import prepare_data, normalize_imgs_and_tags, train_test_split
-from speckcn2.mlmodels import setup_model, setup_loss, setup_optimizer
-from speckcn2.mlops import train, score
-from speckcn2.postprocess import tags_distribution, plot_loss
+from speckcn2 import *
 
 # In[2]:
 
@@ -32,9 +28,7 @@ print(f'Using {device}.', flush=True)
 # In[5]:
 
 # Load or preprocess the data
-all_images, all_tags = prepare_data(config,
-                                    nimg_print=15,
-                                    nreps=config['preproc']['speckreps'])
+all_images, all_tags = prepare_data(config, nimg_print=15)
 
 # In[7]:
 
@@ -82,3 +76,4 @@ test_tags = score(model, test_loader, device, criterion, recover_tag,
 tags_distribution(config, dataset, test_tags, device)
 
 plot_loss(config, model, datadirectory)
+plot_time(config, model, datadirectory)

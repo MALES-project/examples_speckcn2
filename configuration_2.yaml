@@ -14,14 +14,15 @@ preproc:
   centercrop: 410
   resize: 256
   speckreps: 1
+  multichannel: 1
   dataname: all_images_cart256.pt
 model:
-  name: Model
+  name: Model_sC16
   type: small_scnnC16
   save_every: 10
   pretrained: true
 hyppar:
-  maxepochs: 500
+  maxepochs: 300
   batch_size: 32
   lr: 0.0001
   loss: MSELoss

@@ -14,9 +14,10 @@ preproc:
   centercrop: 410
   resize: 256
   speckreps: 1
+  multichannel: 1
   dataname: all_images_cart256.pt
 model:
-  name: Model
+  name: Model_res50
   type: resnet50
   save_every: 100
   pretrained: true

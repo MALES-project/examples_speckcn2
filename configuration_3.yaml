@@ -12,17 +12,18 @@ preproc:
   equivariant: true
   randomrotate: false
   centercrop: 410
-  resize: 256
+  resize: 128
   speckreps: 1
-  dataname: all_images_cart256.pt
+  multichannel: 1
+  dataname: all_images_cart128.pt
 model:
-  name: Model
-  type: scnnC8
-  save_every: 10
+  name: Model_res50_128x128
+  type: resnet50
+  save_every: 100
   pretrained: true
 hyppar:
-  maxepochs: 500
-  batch_size: 32
+  maxepochs: 1000
+  batch_size: 64
   lr: 0.0001
   loss: MSELoss
   optimizer: Adam

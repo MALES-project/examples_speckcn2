@@ -16,6 +16,7 @@ Here we explain what it is expected in a typical `configuration.yaml` file:
 * **resize**: The size to which the images are resized.
 * **speckreps**: The number of times that we want to repeat each speckle pattern in order to augment the data. Use only in combination with random rotations.
 * **multichannel**: The number of speckle pattern from the same Cn2 to use as image channels.
+* **normalization**: How to normalize the tags: `unif`, `lin`, `log` or `zscore`.
 * **dataname**: The name of the file where the preprocessed images are saved.
 
 #### model

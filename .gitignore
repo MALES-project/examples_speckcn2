@@ -3,5 +3,6 @@ slurm-*
 *.err
 
 .local*
+local*
 
 slurm/*

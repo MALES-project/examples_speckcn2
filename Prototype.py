@@ -21,8 +21,8 @@ all_images, all_tags = prepare_data(config, nimg_print=15)
 
 # Normalize the tags between 0 and 1
 # this will help the model by giving it more reasonable numbers to work with
-dataset, normalize_img, recover_img, normalize_tag, recover_tag = normalize_imgs_and_tags(
-    all_images, all_tags)
+nz = Normalizer(config)
+dataset = nz.normalize_imgs_and_tags(all_images, all_tags)
 
 # Split the data in training and testing
 train_loader, test_loader = train_test_split(dataset,
@@ -44,8 +44,7 @@ model, average_loss = train(model, last_model_state, config, train_loader,
 print(f'Finished Training, Loss: {average_loss:.5f}', flush=True)
 
 # Now test the model, while also producing some plots
-test_tags = score(model, test_loader, device, criterion, recover_tag,
-                  datadirectory)
+test_tags = score(model, test_loader, device, criterion, nz)
 
 # Finaly we do some postprocessing analysis
 # Plot the distribution of the screen tags

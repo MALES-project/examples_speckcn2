@@ -15,6 +15,7 @@ preproc:
   resize: 256
   speckreps: 1
   multichannel: 1
+  normalization: unif
   dataname: all_images_cart256.pt
 model:
   name: Model_res50

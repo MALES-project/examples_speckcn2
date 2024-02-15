@@ -22,7 +22,7 @@ model:
   save_every: 100
   pretrained: true
 hyppar:
-  maxepochs: 1000
+  maxepochs: 700
   batch_size: 64
   lr: 0.0001
   loss: MSELoss

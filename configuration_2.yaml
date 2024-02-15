@@ -19,10 +19,10 @@ preproc:
 model:
   name: Model_sC16
   type: small_scnnC16
-  save_every: 10
+  save_every: 20
   pretrained: true
 hyppar:
-  maxepochs: 300
+  maxepochs: 80
   batch_size: 32
   lr: 0.0001
   loss: MSELoss

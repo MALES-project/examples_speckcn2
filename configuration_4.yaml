@@ -12,17 +12,17 @@ preproc:
   equivariant: true
   randomrotate: false
   centercrop: 410
-  resize: 256
+  resize: 128
   speckreps: 1
   multichannel: 1
-  dataname: all_images_cart256.pt
+  dataname: all_images_cart128.pt
 model:
-  name: Model_sC16
+  name: Model_sC16_128x128
   type: small_scnnC16
-  save_every: 10
+  save_every: 20
   pretrained: true
 hyppar:
-  maxepochs: 300
+  maxepochs: 200
   batch_size: 32
   lr: 0.0001
   loss: MSELoss

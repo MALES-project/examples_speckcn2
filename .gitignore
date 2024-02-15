@@ -2,4 +2,6 @@ slurm-*
 *.out
 *.err
 
+.local*
+
 slurm/*

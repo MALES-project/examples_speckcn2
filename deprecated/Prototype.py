@@ -6,8 +6,6 @@
 # Load the necessary packages
 import torch
 import torchvision.transforms as transforms
-import os
-import sys
 
 from speckcn2.io import prepare_data, normalize_tags, train_test_split
 from speckcn2.mlmodels import get_resnet50
@@ -15,8 +13,6 @@ from speckcn2.mlops import train, score
 from speckcn2.histos import tags_distribution
 
 # In[2]:
-
-
 
 # In[3]:
 
@@ -34,7 +30,6 @@ original_resolution = 1024
 datadirectory = f'{nscreens}screens_{original_resolution}x{original_resolution}'
 
 # In[5]:
-
 
 # In[6]:
 

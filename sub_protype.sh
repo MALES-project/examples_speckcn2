@@ -15,4 +15,4 @@ module load 2023r1
 module load python/3.9.8
 module load py-pip
 
-python Prototype.py $1 
+python Prototype.py $1

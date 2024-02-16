@@ -2,7 +2,9 @@
 
 # Load the necessary packages
 import sys
+import os
 import torch
+import pickle
 from speckcn2 import *
 
 # Load the configuration file
@@ -17,17 +19,15 @@ print(f'Using {device}.', flush=True)
 
 # Preprocess the data
 # if a database of the preprocess data exist, then we just load it
-all_images, all_tags = prepare_data(config, nimg_print=15)
+all_images, all_tags, all_ensemble_ids = prepare_data(config, nimg_print=15)
 
 # Normalize the tags between 0 and 1
 # this will help the model by giving it more reasonable numbers to work with
 nz = Normalizer(config)
-dataset = nz.normalize_imgs_and_tags(all_images, all_tags)
+dataset = nz.normalize_imgs_and_tags(all_images, all_tags, all_ensemble_ids)
 
 # Split the data in training and testing
-train_loader, test_loader = train_test_split(dataset,
-                                             config['hyppar']['batch_size'],
-                                             0.8)
+train_set, test_set = train_test_split(config, dataset)
 
 # Load the model that you want to use
 model, last_model_state = setup_model(config)
@@ -39,16 +39,16 @@ criterion = setup_loss(config)
 optimizer = setup_optimizer(config, model)
 
 # (!) Train the model
-model, average_loss = train(model, last_model_state, config, train_loader,
-                            test_loader, device, optimizer, criterion)
+model, average_loss = train(model, last_model_state, config, train_set,
+                            test_set, device, optimizer, criterion)
 print(f'Finished Training, Loss: {average_loss:.5f}', flush=True)
 
 # Now test the model, while also producing some plots
-test_tags = score(model, test_loader, device, criterion, nz)
+test_tags = score(model, test_set, device, criterion, nz)
 
 # Finaly we do some postprocessing analysis
 # Plot the distribution of the screen tags
-tags_distribution(config, dataset, test_tags, device)
+tags_distribution(config, train_set, test_tags, device)
 # Plot the loss during training
 plot_loss(config, model, datadirectory)
 # Plot the execution time

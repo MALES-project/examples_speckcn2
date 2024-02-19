@@ -49,6 +49,7 @@ test_tags = score(model, test_set, device, criterion, nz)
 # Finaly we do some postprocessing analysis
 # Plot the distribution of the screen tags
 tags_distribution(config, train_set, test_tags, device)
+tags_distribution(config, train_set, test_tags, device, rescale=True, recover_tag=nz.recover_tag)
 # Plot the loss during training
 plot_loss(config, model, datadirectory)
 # Plot the execution time

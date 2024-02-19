@@ -1,0 +1,46 @@
+speckle:
+  nscreens: 8
+  original_res: 1024
+    #datadirectory: /scratch/sciarella/males/8screens_1024x1024
+  #datadirectory: /scratch/sciarella/males/MALES_Dataset1
+  #datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/8screens_1024x1024
+  datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/MALES_Dataset1
+preproc:
+  polresize: 1024
+  polarize: false
+  equivariant: true
+  randomrotate: false
+  centercrop: 410
+  resize: 256
+  speckreps: 1
+  ensemble: 2
+  ensemble_unif: false
+  normalization: lin
+  dataname: all_images.pt
+model:
+#  name: Model_res50_e2
+  name: Model_sc16
+  #type: small_scnnC16
+  type: scnnC16
+#  type: resnet50
+  save_every: 100
+  pretrained: true
+hyppar:
+  maxepochs: 1
+  ttsplit: 0.3
+  batch_size: 16
+  lr: 0.0001
+  lr_scheduler: Plateau
+  early_stopping: 50
+  loss: MAELoss
+  optimizer: Adam
+scnn:
+  KERNEL_SIZES: [7, 7, 5, 5]
+  PADDINGS: [1, 2, 2, 1]
+  STRIDES: [1, 2, 2, 2]
+  FEATURE_FIELDS: [24, 48, 48, 64]
+  POOL_INDICES: [1, 3]
+  SIGMA: [0.66, 0.66]
+  POOL_STRIDES: [2, 2]
+  POOL_PADDINGS: [0, 0]
+  final_n_features: 32

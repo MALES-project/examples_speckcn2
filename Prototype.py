@@ -17,17 +17,14 @@ datadirectory = config['speckle']['datadirectory']
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f'Using {device}.', flush=True)
 
-# Preprocess the data
-# if a database of the preprocess data exist, then we just load it
+# Preprocess the data. If a database of the preprocess data exist, then we just load it
 all_images, all_tags, all_ensemble_ids = prepare_data(config, nimg_print=15)
 
-# Normalize the tags between 0 and 1
-# this will help the model by giving it more reasonable numbers to work with
+# Normalize the tags between 0 and 1. This will help the model by giving it more reasonable numbers to work with
 nz = Normalizer(config)
-dataset = nz.normalize_imgs_and_tags(all_images, all_tags, all_ensemble_ids)
 
 # Split the data in training and testing
-train_set, test_set = train_test_split(config, dataset)
+train_set, test_set = train_test_split(all_images, all_tags, all_ensemble_ids, nz)
 
 # Load the model that you want to use
 model, last_model_state = setup_model(config)

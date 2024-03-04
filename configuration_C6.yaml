@@ -15,12 +15,12 @@ preproc:
   normalization: lin
   dataname: all_images.pt
 model:
-  name: Model_sc8_E1
-  type: scnnC8
-  save_every: 2
+  name: Model_sc6_E1
+  type: scnnC6
+  save_every: 5
   pretrained: true
 hyppar:
-  maxepochs: 6
+  maxepochs: 25
   ttsplit: 0.8
   batch_size: 32
   lr: 0.0001

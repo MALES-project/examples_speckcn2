@@ -1,0 +1,38 @@
+speckle:
+  nscreens: 8
+  original_res: 1024
+  datadirectory: /scratch/sciarella/males/MALES_Dataset3
+preproc:
+  polresize: 1024
+  polarize: false
+  equivariant: false
+  randomrotate: false
+  centercrop: -1
+  resize: 256
+  speckreps: 1
+  ensemble: 1
+  ensemble_unif: false
+  normalization: lin
+  dataname: all_images.pt
+model:
+  name: Model_sc8_E1
+  type: scnnC8
+  save_every: 5
+  pretrained: true
+hyppar:
+  maxepochs: 25
+  ttsplit: 0.8
+  batch_size: 32
+  lr: 0.0001
+  loss: MSELoss
+  optimizer: Adam
+scnn:
+  KERNEL_SIZES: [7, 7, 5, 5]
+  PADDINGS: [1, 2, 2, 1]
+  STRIDES: [1, 2, 2, 2]
+  FEATURE_FIELDS: [24, 48, 48, 64]
+  POOL_INDICES: [1, 3]
+  SIGMA: [0.66, 0.66]
+  POOL_STRIDES: [2, 2]
+  POOL_PADDINGS: [0, 0]
+  final_n_features: 32

@@ -10,19 +10,19 @@ preproc:
   centercrop: -1
   resize: 256
   speckreps: 1
-  ensemble: 6
+  ensemble: 2
   ensemble_unif: false
   normalization: lin
   dataname: all_images.pt
 model:
-  name: Model_sc16_E6
-  type: scnnC16
-  save_every: 2
+  name: Model_sc8_E2
+  type: scnnC8
+  save_every: 5
   pretrained: true
 hyppar:
-  maxepochs: 6
+  maxepochs: 25
   ttsplit: 0.8
-  batch_size: 16
+  batch_size: 32
   lr: 0.0001
   loss: MSELoss
   optimizer: Adam

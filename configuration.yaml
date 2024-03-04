@@ -1,33 +1,30 @@
 speckle:
   nscreens: 8
   original_res: 1024
-    #datadirectory: /scratch/sciarella/males/8screens_1024x1024
-  #datadirectory: /scratch/sciarella/males/MALES_Dataset1
-  #datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/8screens_1024x1024
-  datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/MALES_Dataset1
+  datadirectory: /scratch/sciarella/males/MALES_Dataset3
 preproc:
-  #polresize: 2048
   polresize: 1024
   polarize: false
-  equivariant: true
+  equivariant: false
   randomrotate: false
-  centercrop: 410
+  centercrop: -1
   resize: 256
   speckreps: 1
-  ensemble: 4
+  ensemble: 1
+  ensemble_unif: false
   normalization: lin
   dataname: all_images.pt
 model:
-  #name: Model_res50
-  name: Model_sc16
-  type: scnnC16
-  #type: resnet50
-  save_every: 100
+  name: Model_res50_E1
+  #name: Model_sc16
+  #type: scnnC16
+  type: resnet50
+  save_every: 25
   pretrained: true
 hyppar:
-  maxepochs: 1
+  maxepochs: 100
   ttsplit: 0.8
-  batch_size: 16
+  batch_size: 32
   lr: 0.0001
   loss: MSELoss
   optimizer: Adam

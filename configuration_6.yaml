@@ -10,12 +10,12 @@ preproc:
   centercrop: -1
   resize: 256
   speckreps: 1
-  ensemble: 4
+  ensemble: 6
   ensemble_unif: false
   normalization: lin
   dataname: all_images.pt
 model:
-  name: Model_res50_E4
+  name: Model_res50_E6
   #name: Model_sc16
   #type: scnnC16
   type: resnet50

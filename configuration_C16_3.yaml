@@ -15,19 +15,17 @@ preproc:
   centercrop: -1
   resize: 256
   speckreps: 1
-  ensemble: 1
+  ensemble: 3
   ensemble_unif: false
   normalization: lin
   dataname: all_images.pt
 model:
-  name: Model_res50_E1
-  #name: Model_sc16
-  #type: scnnC16
-  type: resnet50
-  save_every: 25
+  name: Model_sc16_E3
+  type: scnnC16
+  save_every: 2
   pretrained: true
 hyppar:
-  maxepochs: 100
+  maxepochs: 6
   ttsplit: 0.8
   batch_size: 32
   lr: 0.0001
@@ -55,4 +53,3 @@ scnn:
   POOL_STRIDES: [2, 2]
   POOL_PADDINGS: [0, 0]
   final_n_features: 32
-

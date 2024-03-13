@@ -1,7 +1,12 @@
 speckle:
   nscreens: 8
+  hArray: [0.1, 300, 650, 1e3, 2e3, 5e3, 10e3, 20e3, 40e3]
+  splits: [150, 475, 825, 1500, 3500, 7500, 15000, 30000]
+  lambda: 550
+  z: 0
+  L: 40e3
   original_res: 1024
-  datadirectory: /scratch/sciarella/males/MALES_Dataset3
+  datadirectory: /scratch/sciarella/males/MALES_Dataset2b_and_3
 preproc:
   polresize: 1024
   polarize: false
@@ -17,15 +22,27 @@ preproc:
 model:
   name: Model_sc6_E1
   type: scnnC6
-  save_every: 5
+  save_every: 2
   pretrained: true
 hyppar:
-  maxepochs: 25
+  maxepochs: 12
   ttsplit: 0.8
   batch_size: 32
   lr: 0.0001
-  loss: MSELoss
+  lr_scheduler: Plateau
+  early_stopping: 50
   optimizer: Adam
+loss:
+  JMAE: 1 
+  JMSE: 0
+  Cn2MAE: 0 
+  Cn2MSE: 0
+  Pearson: 0
+  Fried: 1
+  Isoplanatic: 1
+  Rytov: 0
+  Scintillation_w: 1
+  Scintillation_ms: 0
 scnn:
   KERNEL_SIZES: [7, 7, 5, 5]
   PADDINGS: [1, 2, 2, 1]

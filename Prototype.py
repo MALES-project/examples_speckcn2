@@ -32,7 +32,7 @@ model, last_model_state = setup_model(config)
 model = model.to(device)
 
 # Define the loss function and optimizer
-criterion = setup_loss(config)
+criterion = ComposableLoss(config, nz)
 optimizer = setup_optimizer(config, model)
 
 # (!) Train the model

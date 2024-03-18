@@ -6,7 +6,7 @@ speckle:
   z: 0
   L: 40e3
   original_res: 1024
-  datadirectory: /scratch/sciarella/males/MALES_Dataset2b_and_3
+  datadirectory: /scratch/sciarella/males/MALES_H5Dataset_2b3
 preproc:
   polresize: 1024
   polarize: false

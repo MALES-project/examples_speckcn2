@@ -42,7 +42,7 @@ model, average_loss = train(model, last_model_state, config, train_set,
 print(f'Finished Training, Loss: {average_loss:.5f}', flush=True)
 
 # Now test the model, while also producing some plots
-test_tags, test_losses = score(model, test_set, device, criterion, nz)
+test_tags, test_losses, test_measures, test_cn2_pred, test_cn2_true, test_recovered_tag_pred, test_recovered_tag_true = score(model, test_set, device, criterion, nz)
 
 # Finaly we do some postprocessing analysis
 # Plot the distribution of the screen tags
@@ -54,3 +54,5 @@ plot_histo_losses(config, test_losses, datadirectory)
 plot_loss(config, model, datadirectory)
 # Plot the execution time
 plot_time(config, model, datadirectory)
+# Plot the parameters of the model vs the loss
+plot_param_vs_loss(config, test_losses, datadirectory, test_measures)

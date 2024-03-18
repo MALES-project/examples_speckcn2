@@ -33,7 +33,7 @@ hyppar:
   early_stopping: 50
   optimizer: Adam
 loss:
-  JMAE: 1 
+  JMAE: 0 
   JMSE: 0
   Cn2MAE: 0 
   Cn2MSE: 0

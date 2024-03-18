@@ -46,6 +46,7 @@ test_tags, test_losses = score(model, test_set, device, criterion, nz)
 
 # Finaly we do some postprocessing analysis
 # Plot the distribution of the screen tags
+tags_distribution(config, train_set, test_tags, device, rescale=False)
 tags_distribution(config, train_set, test_tags, device, rescale=True, recover_tag=nz.recover_tag)
 # Plot the histograms of the loss function
 plot_histo_losses(config, test_losses, datadirectory)

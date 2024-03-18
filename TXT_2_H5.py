@@ -20,4 +20,4 @@ for filename in os.listdir(txt_dir):
             f.create_dataset('data', data=data)
 
         # Delete the original .txt file
-        os.remove(os.path.join(txt_dir, filename))
+        #os.remove(os.path.join(txt_dir, filename))

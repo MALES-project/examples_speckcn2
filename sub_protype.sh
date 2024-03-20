@@ -7,7 +7,7 @@
 #SBATCH --time=05:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
-#SBATCH --mem-per-cpu=6G
+#SBATCH --mem-per-cpu=7G
 #SBATCH --gpus-per-task=1
 #SBATCH --account=research-AE-SPE
 

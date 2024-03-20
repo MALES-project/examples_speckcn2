@@ -20,7 +20,7 @@ preproc:
   normalization: lin
   dataname: all_images.pt
 model:
-  name: Model_res50_E3
+  name: Model_res50_E3_JandR
   #name: Model_sc16
   #type: scnnC16
   type: resnet50
@@ -35,15 +35,15 @@ hyppar:
   early_stopping: 50
   optimizer: Adam
 loss:
-  JMAE: 0 
+  JMAE: 1 
   JMSE: 0
   Cn2MAE: 0 
   Cn2MSE: 0
   Pearson: 0
   Fried: 1
-  Isoplanatic: 1
+  Isoplanatic: 0
   Rytov: 0
-  Scintillation_w: 1
+  Scintillation_w: 0
   Scintillation_ms: 0
 scnn:
   KERNEL_SIZES: [7, 7, 5, 5]

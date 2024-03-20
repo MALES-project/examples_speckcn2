@@ -20,28 +20,28 @@ preproc:
   normalization: lin
   dataname: all_images.pt
 model:
-  name: Model_sc8_E3
+  name: Model_sc8_E3_JandR
   type: scnnC8
   save_every: 2
   pretrained: true
 hyppar:
-  maxepochs: 10
+  maxepochs: 12
   ttsplit: 0.8
-  batch_size: 32
+  batch_size: 16
   lr: 0.0001
   lr_scheduler: Plateau
   early_stopping: 50
   optimizer: Adam
 loss:
-  JMAE: 0 
+  JMAE: 1 
   JMSE: 0
   Cn2MAE: 0 
   Cn2MSE: 0
   Pearson: 0
   Fried: 1
-  Isoplanatic: 1
+  Isoplanatic: 0
   Rytov: 0
-  Scintillation_w: 1
+  Scintillation_w: 0
   Scintillation_ms: 0
 scnn:
   KERNEL_SIZES: [7, 7, 5, 5]

@@ -4,9 +4,10 @@ import h5py
 
 # Directory containing the .txt files
 txt_dir = '../MALES_Dataset2b_and_3/'
+txt_dir = '/tudelft.net/staff-umbrella/MALES/more3'
 
 # Output directory for the HDF5 files
-hdf5_dir = '../MALES_H5Dataset_2b3/'
+hdf5_dir = '../MALES_H5Dataset_3/'
 
 for filename in os.listdir(txt_dir):
     if filename.endswith('.txt'):

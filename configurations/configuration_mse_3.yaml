@@ -6,7 +6,7 @@ speckle:
   z: 0
   L: 40e3
   original_res: 1024
-  datadirectory: /scratch/sciarella/males/MALES_H5Dataset_2b3
+  datadirectory: /scratch/sciarella/males/MALES_H5Dataset_3
 preproc:
   polresize: 1024
   polarize: false
@@ -20,20 +20,22 @@ preproc:
   normalization: lin
   dataname: all_images.pt
 model:
-  name: Model_sc8_E3_JMAE
-  type: scnnC8
-  save_every: 2
+  name: Model_res50_E3_MSE
+  type: resnet50
+  save_every: 10
   pretrained: true
 hyppar:
-  maxepochs: 12
+  maxepochs: 30
   ttsplit: 0.8
-  batch_size: 16
+  batch_size: 32
   lr: 0.0001
   lr_scheduler: Plateau
   early_stopping: 50
   optimizer: Adam
 loss:
-  JMAE: 1 
+  MAE: 0 
+  MSE: 1
+  JMAE: 0 
   JMSE: 0
   Cn2MAE: 0 
   Cn2MSE: 0
@@ -53,3 +55,4 @@ scnn:
   POOL_STRIDES: [2, 2]
   POOL_PADDINGS: [0, 0]
   final_n_features: 32
+

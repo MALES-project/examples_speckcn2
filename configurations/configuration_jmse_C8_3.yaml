@@ -6,7 +6,7 @@ speckle:
   z: 0
   L: 40e3
   original_res: 1024
-  datadirectory: /scratch/sciarella/males/MALES_H5Dataset_2b3
+  datadirectory: /scratch/sciarella/males/MALES_H5Dataset_3
 preproc:
   polresize: 1024
   polarize: false
@@ -20,12 +20,12 @@ preproc:
   normalization: lin
   dataname: all_images.pt
 model:
-  name: Model_sc8_E3_JMAE
+  name: Model_sc8_E3_JMSE
   type: scnnC8
   save_every: 2
   pretrained: true
 hyppar:
-  maxepochs: 12
+  maxepochs: 8
   ttsplit: 0.8
   batch_size: 16
   lr: 0.0001
@@ -33,8 +33,8 @@ hyppar:
   early_stopping: 50
   optimizer: Adam
 loss:
-  JMAE: 1 
-  JMSE: 0
+  JMAE: 0 
+  JMSE: 1
   Cn2MAE: 0 
   Cn2MSE: 0
   Pearson: 0

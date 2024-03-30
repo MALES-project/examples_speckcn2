@@ -20,9 +20,7 @@ preproc:
   normalization: lin
   dataname: all_images.pt
 model:
-  name: Model_res50_E3_JandR
-  #name: Model_sc16
-  #type: scnnC16
+  name: Model_res50_E3_JMAE
   type: resnet50
   save_every: 25
   pretrained: true

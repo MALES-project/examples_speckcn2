@@ -28,4 +28,7 @@
 #sbatch --job-name=jris-C6-E1 --output=slurm/jris-C6-E1.out --error=slurm/jris-C6-E1.err sub_protype.sh configurations/configuration_jris_C6.yaml
 
 #sbatch --job-name=jmae-R50-E3 --output=slurm/jmae-R50-E3.out --error=slurm/jmae-R50-E3.err sub_protype.sh configurations/configuration_jmae_3.yaml
-sbatch --job-name=mse-R50-E3 --output=slurm/mse-R50-E3.out --error=slurm/mse-R50-E3.err sub_protype.sh configurations/configuration_mse_3.yaml
+#sbatch --job-name=mse-R50-E3 --output=slurm/mse-R50-E3.out --error=slurm/mse-R50-E3.err sub_protype.sh configurations/configuration_mse_3.yaml
+#sbatch --job-name=mse-R18-E3 --output=slurm/mse-R18-E3.out --error=slurm/mse-R18-E3.err sub_protype.sh configurations/configuration_mse_R18_3.yaml
+
+sbatch --job-name=jris-fC6-E3-drop --output=slurm/fastC6-E3-drop.out --error=slurm/fastC6-E3-drop.err sub_protype.sh configurations/configuration_fastC6_3.yaml

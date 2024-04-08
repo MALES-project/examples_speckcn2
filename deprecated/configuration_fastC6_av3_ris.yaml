@@ -15,17 +15,17 @@ preproc:
   centercrop: -1
   resize: 256
   speckreps: 1
-  ensemble: 3
+  average: 3
   ensemble_unif: false
   normalization: lin
   dataname: all_images.pt
 model:
-  name: Model_fastsc6_drop_E3
+  name: Model_fastsc6_drop_A3_ris
   type: scnnC6
-  save_every: 4
+  save_every: 5
   pretrained: true
 hyppar:
-  maxepochs: 20
+  maxepochs: 40
   ttsplit: 0.8
   batch_size: 32
   lr: 0.0001
@@ -40,10 +40,10 @@ loss:
   Cn2MAE: 0 
   Cn2MSE: 0
   Pearson: 0
-  Fried: 0
-  Isoplanatic: 0
+  Fried: 1
+  Isoplanatic: 1
   Rytov: 0
-  Scintillation_w: 0
+  Scintillation_w: 1
   Scintillation_ms: 0
 scnn:
   KERNEL_SIZES: [7, 7, 7, 7]

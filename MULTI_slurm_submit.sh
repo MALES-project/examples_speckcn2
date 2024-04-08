@@ -31,4 +31,13 @@
 #sbatch --job-name=mse-R50-E3 --output=slurm/mse-R50-E3.out --error=slurm/mse-R50-E3.err sub_protype.sh configurations/configuration_mse_3.yaml
 #sbatch --job-name=mse-R18-E3 --output=slurm/mse-R18-E3.out --error=slurm/mse-R18-E3.err sub_protype.sh configurations/configuration_mse_R18_3.yaml
 
-sbatch --job-name=jris-fC6-E3-drop --output=slurm/fastC6-E3-drop.out --error=slurm/fastC6-E3-drop.err sub_protype.sh configurations/configuration_fastC6_3.yaml
+#sbatch --job-name=jris-fC6-E3-r --output=slurm/fastC6-E3-r.out --error=slurm/fastC6-E3-r.err sub_protype.sh configurations/configuration_fastC6_r_3.yaml
+
+
+#sbatch --job-name=jris-fC6-E3 --output=slurm/fastC6-E3.out --error=slurm/fastC6-E3.err sub_protype.sh configurations/configuration_fastC6_3.yaml
+#sbatch --job-name=jris-fC6-A3 --output=slurm/fastC6-A3.out --error=slurm/fastC6-A3.err sub_protype.sh configurations/configuration_fastC6_av3.yaml
+#sbatch --job-name=jris-fC6-E3-ris --output=slurm/fastC6-E3-ris.out --error=slurm/fastC6-E3-ris.err sub_protype.sh configurations/configuration_fastC6_ris_3.yaml
+#sbatch --job-name=jris-fC6-A3-ris --output=slurm/fastC6-A3-ris.out --error=slurm/fastC6-A3-ris.err sub_protype.sh configurations/configuration_fastC6_av3_ris.yaml
+
+sbatch --job-name=fC6-E3 --output=slurm/fastC6-E3.out --error=slurm/fastC6-E3.err sub_protype.sh configurations/configuration_fastC6_E3_smaller.yaml
+sbatch --job-name=fC6-E3-r --output=slurm/fastC6-E3-r.out --error=slurm/fastC6-E3-r.err sub_protype.sh configurations/configuration_fastC6_E3_smaller_r.yaml

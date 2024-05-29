@@ -39,5 +39,28 @@
 #sbatch --job-name=jris-fC6-E3-ris --output=slurm/fastC6-E3-ris.out --error=slurm/fastC6-E3-ris.err sub_protype.sh configurations/configuration_fastC6_ris_3.yaml
 #sbatch --job-name=jris-fC6-A3-ris --output=slurm/fastC6-A3-ris.out --error=slurm/fastC6-A3-ris.err sub_protype.sh configurations/configuration_fastC6_av3_ris.yaml
 
-sbatch --job-name=fC6-E3 --output=slurm/fastC6-E3.out --error=slurm/fastC6-E3.err sub_protype.sh configurations/configuration_fastC6_E3_smaller.yaml
-sbatch --job-name=fC6-E3-r --output=slurm/fastC6-E3-r.out --error=slurm/fastC6-E3-r.err sub_protype.sh configurations/configuration_fastC6_E3_smaller_r.yaml
+#sbatch --job-name=fC6-E3 --output=slurm/fastC6-E3.out --error=slurm/fastC6-E3.err sub_protype.sh configurations/configuration_fastC6_E3_smaller.yaml
+#sbatch --job-name=fC6-E3-r --output=slurm/fastC6-E3-r.out --error=slurm/fastC6-E3-r.err sub_protype.sh configurations/configuration_fastC6_E3_smaller_r.yaml
+
+
+
+
+#sbatch --job-name=C6-E3 --output=slurm/C6-E3.out --error=slurm/C6-E3.err sub_protype.sh configurations/configuration_C6_E3.yaml
+#sbatch --job-name=C6-E3-r --output=slurm/C6-E3-r.out --error=slurm/C6-E3-r.err sub_protype.sh configurations/configuration_C6_E3_r.yaml
+
+#sbatch --job-name=C6-E1 --output=slurm/C6-E1.out --error=slurm/C6-E1.err sub_protype.sh configurations/configuration_C6_E1.yaml
+#sbatch --job-name=C6-E1-r --output=slurm/C6-E1-r.out --error=slurm/C6-E1-r.err sub_protype.sh configurations/configuration_C6_E1_r.yaml
+
+#sbatch --job-name=C6-E4 --output=slurm/C6-E4.out --error=slurm/C6-E4.err sub_protype.sh configurations/configuration_C6_E4.yaml
+#sbatch --job-name=C6-E4-r --output=slurm/C6-E4-r.out --error=slurm/C6-E4-r.err sub_protype.sh configurations/configuration_C6_E4_r.yaml
+
+#sbatch --job-name=C6-E4-r-mae --output=slurm/C6-E4-r.out --error=slurm/C6-E4-r.err sub_protype.sh configurations/configuration_C6_E4_r-mae.yaml
+
+#sbatch --job-name=C6-E3-r-mae --output=slurm/C6-E3-r-mae.out --error=slurm/C6-E3-r-mae.err sub_protype.sh configurations/configuration_C6_E3_r-mae.yaml
+#sbatch --job-name=C6-E6-r-mae --output=slurm/C6-E6-r-mae.out --error=slurm/C6-E6-r-mae.err sub_protype.sh configurations/configuration_C6_E6_r-mae.yaml
+
+
+#sbatch --job-name=C6-E1-noise --output=slurm/C6-E1-noise.out --error=slurm/C6-E1-noise.err sub_protype.sh configurations/configuration_C6_E1_r.yaml
+#sbatch --job-name=C6-E3-noise --output=slurm/C6-E3-noise.out --error=slurm/C6-E3-noise.err sub_protype.sh configurations/configuration_C6_E3_r.yaml
+sbatch --job-name=C6-E4-noise --output=slurm/C6-E4-noise.out --error=slurm/C6-E4-noise.err sub_protype.sh configurations/configuration_C6_E4_r.yaml
+sbatch --job-name=C6-E6-noise --output=slurm/C6-E6-noise.out --error=slurm/C6-E6-noise.err sub_protype.sh configurations/configuration_C6_E6_r.yaml

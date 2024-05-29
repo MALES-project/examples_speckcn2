@@ -54,5 +54,7 @@ plot_histo_losses(config, test_losses, datadirectory)
 plot_loss(config, model, datadirectory)
 # Plot the execution time
 plot_time(config, model, datadirectory)
+# Plot histograms of the different parameters
+plot_param_histo(config, test_losses, datadirectory, test_measures)
 # Plot the parameters of the model vs the loss
 plot_param_vs_loss(config, test_losses, datadirectory, test_measures)

@@ -6,21 +6,21 @@ speckle:
   z: 0
   L: 40e3
   original_res: 1024
-  datadirectory: /scratch/sciarella/males/MALES_H5Dataset_3
+  datadirectory: /scratch/sciarella/males/MALES_Dataset3_gscidar_1000
 preproc:
   polresize: 1024
   polarize: false
   equivariant: false
   randomrotate: false
   centercrop: -1
-  resize: 256
+  resize: 128
   speckreps: 1
   ensemble: 3
   ensemble_unif: false
   normalization: lin
   dataname: all_images.pt
 model:
-  name: Model_fastsc6_smaller_E3
+  name: Model_c6_E3_r_mae
   type: scnnC6
   save_every: 10
   pretrained: true
@@ -33,23 +33,26 @@ hyppar:
   early_stopping: 50
   optimizer: Adam
 loss:
-  MAE: 0
-  MSE: 1
+  MAE: 1
+  MSE: 0
   JMAE: 0 
   JMSE: 0
   Cn2MAE: 0 
   Cn2MSE: 0
   Pearson: 0
-  Fried: 0
+  Fried: 1
   Isoplanatic: 0
   Rytov: 0
   Scintillation_w: 0
   Scintillation_ms: 0
 scnn:
   KERNEL_SIZES: [9, 7, 7, 7]
-  PADDINGS: [2, 2, 2, 2]
-  STRIDES: [2, 2, 2, 2]
+  PADDINGS: [2, 1, 1, 1]
+  STRIDES: [2, 1, 1, 1]
+  #PADDINGS: [2, 2, 2, 2]
+  #STRIDES: [2, 2, 2, 2]
   FEATURE_FIELDS: [16, 32, 32, 32]
+  #FEATURE_FIELDS: [32, 64, 64, 128]
   POOL_INDICES: [1, 3]
   SIGMA: [0.66, 0.66]
   POOL_STRIDES: [2, 2]

@@ -1,10 +1,12 @@
 ## Prototype of the Machine Learning Pipeline
 
 # Load the necessary packages
+from __future__ import annotations
+
 import sys
-import os
+
 import torch
-import pickle
+
 from speckcn2 import *
 
 # Load the configuration file
@@ -24,7 +26,8 @@ all_images, all_tags, all_ensemble_ids = prepare_data(config, nimg_print=15)
 nz = Normalizer(config)
 
 # Split the data in training and testing
-train_set, test_set = train_test_split(all_images, all_tags, all_ensemble_ids, nz)
+train_set, test_set = train_test_split(all_images, all_tags, all_ensemble_ids,
+                                       nz)
 
 # Load the model that you want to use
 model, last_model_state = setup_model(config)
@@ -42,12 +45,18 @@ model, average_loss = train(model, last_model_state, config, train_set,
 print(f'Finished Training, Loss: {average_loss:.5f}', flush=True)
 
 # Now test the model, while also producing some plots
-test_tags, test_losses, test_measures, test_cn2_pred, test_cn2_true, test_recovered_tag_pred, test_recovered_tag_true = score(model, test_set, device, criterion, nz)
+test_tags, test_losses, test_measures, test_cn2_pred, test_cn2_true, test_recovered_tag_pred, test_recovered_tag_true = score(
+    model, test_set, device, criterion, nz, nimg_plot=100)
 
 # Finaly we do some postprocessing analysis
 # Plot the distribution of the screen tags
 tags_distribution(config, train_set, test_tags, device, rescale=False)
-tags_distribution(config, train_set, test_tags, device, rescale=True, recover_tag=nz.recover_tag)
+tags_distribution(config,
+                  train_set,
+                  test_tags,
+                  device,
+                  rescale=True,
+                  recover_tag=nz.recover_tag)
 # Plot the histograms of the loss function
 plot_histo_losses(config, test_losses, datadirectory)
 # Plot the loss during training

@@ -20,6 +20,16 @@ preproc:
   normalization: lin
   img_normalization: false
   dataname: all_images_spider.pt
+noise:
+  D: 1 # Fraction of field
+  t: 0.01 # Width spider
+  snr: 15 # Signal-to-noise ratio
+  dT: 0.2 # Telescope diameter
+  dO: 0.44 # fraction obscuration
+  rn: 3.5 # random noise
+  fw: 32e3 # full well capacity
+  bit: 12 # bit level (sample depth)
+  discretize: off # Whether to discretize the output ('on' or 'off').
 model:
   name: Model_C6
   type: scnnC6

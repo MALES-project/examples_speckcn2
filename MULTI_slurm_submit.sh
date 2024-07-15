@@ -62,5 +62,20 @@
 
 #sbatch --job-name=C6-E1-noise --output=slurm/C6-E1-noise.out --error=slurm/C6-E1-noise.err sub_protype.sh configurations/configuration_C6_E1_r.yaml
 #sbatch --job-name=C6-E3-noise --output=slurm/C6-E3-noise.out --error=slurm/C6-E3-noise.err sub_protype.sh configurations/configuration_C6_E3_r.yaml
-sbatch --job-name=C6-E4-noise --output=slurm/C6-E4-noise.out --error=slurm/C6-E4-noise.err sub_protype.sh configurations/configuration_C6_E4_r.yaml
-sbatch --job-name=C6-E6-noise --output=slurm/C6-E6-noise.out --error=slurm/C6-E6-noise.err sub_protype.sh configurations/configuration_C6_E6_r.yaml
+#sbatch --job-name=C6-E4-noise --output=slurm/C6-E4-noise.out --error=slurm/C6-E4-noise.err sub_protype.sh configurations/configuration_C6_E4_r.yaml
+#sbatch --job-name=C6-E6-noise --output=slurm/C6-E6-noise.out --error=slurm/C6-E6-noise.err sub_protype.sh configurations/configuration_C6_E6_r.yaml
+
+
+#sbatch --job-name=C6-E1-noise --output=slurm/C6-E1-noise.out --error=slurm/C6-E1-noise.err sub_protype.sh configurations/configuration_C6_E1_r.yaml
+#sbatch --job-name=C16-E1-noise --output=slurm/C16-E1-noise.out --error=slurm/C16-E1-noise.err sub_protype.sh configurations/configuration_C16_E1_r.yaml
+#sbatch --job-name=C6-E1-noise-Jonly --output=slurm/C6-E1-noise-Jonly.out --error=slurm/C6-E1-noise-Jonly.err sub_protype.sh configurations/configuration_C6_E1_Jonly.yaml
+#sbatch --job-name=C6-E1-noise-ronly --output=slurm/C6-E1-noise-ronly.out --error=slurm/C6-E1-noise-ronly.err sub_protype.sh configurations/configuration_C6_E1_ronly.yaml
+
+#sbatch --job-name=C6-E1-noise-noSig --output=slurm/C6-E1-noise-noSig.out --error=slurm/C6-E1-noise-noSig.err sub_protype.sh configurations/configuration_C6_E1_noSig.yaml
+#sbatch --job-name=C6-E1-noise-noSig-oneDrop --output=slurm/C6-E1-noise-noSig-oneDrop.out --error=slurm/C6-E1-noise-noSig-oneDrop.err sub_protype.sh configurations/configuration_C6_E1_noSig_oneDrop.yaml
+
+#sbatch --job-name=R18 --output=slurm/R18.out --error=slurm/R18.err sub_protype.sh configurations/configuration_ResNet18.yaml
+#sbatch --job-name=C6 --output=slurm/C6.out --error=slurm/C6.err sub_protype.sh configurations/configuration_C6.yaml
+
+#sbatch --job-name=R18-v2 --output=slurm/R18-v2.out --error=slurm/R18-v2.err sub_protype.sh configurations/configuration_ResNet18_v2.yaml
+sbatch --job-name=R18-v3 --output=slurm/R18-v3.out --error=slurm/R18-v3.err sub_protype.sh configurations/configuration_ResNet18_v3.yaml

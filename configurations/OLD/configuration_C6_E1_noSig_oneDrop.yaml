@@ -19,15 +19,15 @@ preproc:
   ensemble_unif: false
   normalization: lin
   img_normalization: false
-  dataname: all_images.pt
+  dataname: all_images_spider.pt
 model:
-  name: Model_c6_E1_noise
+  name: Model_c6_E1_noise_noSig_oneDrop
   type: scnnC6
-  add_noise: true
+  signal_noise_r: 37/6
   save_every: 10
   pretrained: true
 hyppar:
-  maxepochs: 40
+  maxepochs: 100
   ttsplit: 0.8
   batch_size: 32
   lr: 0.0001
@@ -36,16 +36,16 @@ hyppar:
   optimizer: Adam
 loss:
   MAE: 0
-  MSE: 0.5
+  MSE: 1
   JMAE: 0 
   JMSE: 0
   Cn2MAE: 0 
   Cn2MSE: 0
   Pearson: 0
-  Fried: 1
-  Isoplanatic: 0.5
+  Fried: 0
+  Isoplanatic: 0
   Rytov: 0
-  Scintillation_w: 0.5
+  Scintillation_w: 0
   Scintillation_ms: 0
 scnn:
   KERNEL_SIZES: [9, 7, 7, 7]
@@ -59,6 +59,6 @@ scnn:
   SIGMA: [0.66, 0.66]
   POOL_STRIDES: [2, 2]
   POOL_PADDINGS: [0, 0]
-  final_n_features: 32
-  dropout_p: 0.2
+  final_n_features: 256
+  dropout_p: 0.1
 

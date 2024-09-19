@@ -46,7 +46,10 @@ print(f'Finished Training, Loss: {average_loss:.5f}', flush=True)
 
 # Now test the model, while also producing some plots
 test_tags, test_losses, test_measures, test_cn2_pred, test_cn2_true, test_recovered_tag_pred, test_recovered_tag_true = score(
-    model, test_set, device, criterion, nz, nimg_plot=100)
+    model, test_set, device, criterion, nz, nimg_plot=1)
+
+# Test to see if averaging over speckle patterns improves the results
+average_speckle(config, test_set, device, model, criterion)
 
 # Finaly we do some postprocessing analysis
 # Plot the distribution of the screen tags

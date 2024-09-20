@@ -49,7 +49,8 @@ test_tags, test_losses, test_measures, test_cn2_pred, test_cn2_true, test_recove
     model, test_set, device, criterion, nz, nimg_plot=1)
 
 # Test to see if averaging over speckle patterns improves the results
-average_speckle(config, test_set, device, model, criterion)
+average_speckle_input(config, test_set, device, model, criterion)
+average_speckle_output(config, test_set, device, model, criterion)
 
 # Finaly we do some postprocessing analysis
 # Plot the distribution of the screen tags

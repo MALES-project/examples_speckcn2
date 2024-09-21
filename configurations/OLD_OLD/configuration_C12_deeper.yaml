@@ -5,15 +5,15 @@ speckle:
   lambda: 550
   z: 0
   L: 40e3
-  original_res: 105
+  original_res: 108
   datadirectory: /scratch/sciarella/males/MALES_H5Dataset4
 preproc:
-  polresize: 105
+  polresize: 108
   polarize: false
   equivariant: false
   randomrotate: false
   centercrop: -1
-  resize: 105
+  resize: 108
   speckreps: 1
   ensemble: 1
   ensemble_unif: false
@@ -31,12 +31,12 @@ noise:
   bit: 12 # bit level (sample depth)
   discretize: off # Whether to discretize the output ('on' or 'off').
 model:
-  name: Model_ResNet18
-  type: resnet18
+  name: Model_C12_deeper
+  type: scnnC12
   save_every: 10
   pretrained: true
 hyppar:
-  maxepochs: 100
+  maxepochs: 50
   ttsplit: 0.8
   batch_size: 32
   lr: 0.0001
@@ -57,17 +57,17 @@ loss:
   Scintillation_w: 0
   Scintillation_ms: 0
 scnn:
-  KERNEL_SIZES: [9, 7, 7, 7]
+  KERNEL_SIZES: [5, 3, 3, 3]
   PADDINGS: [2, 1, 1, 1]
   STRIDES: [2, 1, 1, 1]
-  FEATURE_FIELDS: [16, 32, 32, 32]
-  POOL_INDICES: [1, 3]
+  FEATURE_FIELDS: [16, 16, 16, 16]
+  POOL_INDICES: [2, 4]
   SIGMA: [0.66, 0.66]
   POOL_STRIDES: [2, 2]
   POOL_PADDINGS: [0, 0]
 final_block:
   - type: Dropout
-    p: 0.5
+    p: 0.2
   - type: Linear
     out_features: nscreens
   - type: Sigmoid

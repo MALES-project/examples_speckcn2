@@ -3,7 +3,8 @@
 #SBATCH --job-name=MALES-speckcn2
 #SBATCH --output=slurm/speckcn2.out
 #SBATCH --error=slurm/speckcn2.err
-#SBATCH --partition=gpu
+#SBATCH --partition=gpu-a100-small
+# You can use the partition gpu-a100-small for <24h jobs, for longer use gpu
 #SBATCH --time=20:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8

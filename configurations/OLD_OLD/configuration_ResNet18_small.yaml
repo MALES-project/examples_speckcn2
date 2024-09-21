@@ -5,15 +5,15 @@ speckle:
   lambda: 550
   z: 0
   L: 40e3
-  original_res: 105
+  original_res: 108
   datadirectory: /scratch/sciarella/males/MALES_H5Dataset4
 preproc:
-  polresize: 105
+  polresize: 108
   polarize: false
   equivariant: false
   randomrotate: false
   centercrop: -1
-  resize: 105
+  resize: 108
   speckreps: 1
   ensemble: 1
   ensemble_unif: false

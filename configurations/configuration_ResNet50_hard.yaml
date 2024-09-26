@@ -31,8 +31,8 @@ noise:
   bit: 12 # bit level (sample depth)
   discretize: off # Whether to discretize the output ('on' or 'off').
 model:
-  name: Model_ResNet18
-  type: resnet18
+  name: Model_ResNet50_hard
+  type: resnet50
   save_every: 10
   pretrained: true
 hyppar:
@@ -70,4 +70,4 @@ final_block:
     p: 0.5
   - type: Linear
     out_features: nscreens
-  - type: Sigmoid
+  - type: Hardsigmoid

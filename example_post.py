@@ -16,7 +16,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Load the model that you want to use and the weights
 model, last_model_state = sp2.setup_model(config)
-model, _ = sp2.io.load_model_state(model, datadirectory)
+model, _ = sp2.load_model_state(model, datadirectory)
 
 # Preprocess the data. If a database of the preprocess data exist, then we just load it
 all_images, all_tags, all_ensemble_ids = sp2.prepare_data(config,

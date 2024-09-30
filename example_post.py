@@ -5,6 +5,8 @@ from __future__ import annotations
 
 import sys
 import torch
+import numpy as np
+import random
 import speckcn2 as sp2
 
 def main(conf_name):
@@ -14,6 +16,12 @@ def main(conf_name):
     # one of which is the path to the data, that we need to store in this variable
     datadirectory = config['speckle']['datadirectory']
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    # If seed is specified in the configuration file, we set it here, otherwise use a default 
+    seed = config.get('seed', 42)
+    torch.manual_seed(seed)
+    np.random.seed(seed)
+    random.seed(seed)
     
     # Load the model that you want to use and the weights
     model, last_model_state = sp2.setup_model(config)
@@ -35,7 +43,7 @@ def main(conf_name):
     
     # Test the model
     test_tags, test_losses, test_measures, test_cn2_pred, test_cn2_true, test_recovered_tag_pred, test_recovered_tag_true = sp2.score(
-        model, test_set, device, criterion, nz, nimg_plot=1)
+        model, test_set, device, criterion, nz, nimg_plot=20)
     
     # Test to see if averaging over speckle patterns improves the results
     sp2.average_speckle_input(config, test_set, device, model, criterion)

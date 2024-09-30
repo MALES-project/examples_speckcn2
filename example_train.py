@@ -5,6 +5,8 @@ from __future__ import annotations
 
 import sys
 import torch
+import numpy as np
+import random
 import speckcn2 as sp2
 
 def main(conf_name):
@@ -13,6 +15,12 @@ def main(conf_name):
     config = sp2.load_config(conf_name)
     # one of which is the path to the data, that we need to store in this variable
     datadirectory = config['speckle']['datadirectory']
+
+    # If seed is specified in the configuration file, we set it here, otherwise use a default 
+    seed = config.get('seed', 42)
+    torch.manual_seed(seed)
+    np.random.seed(seed)
+    random.seed(seed)
     
     # Set the device: if a GPU is available, we use it
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

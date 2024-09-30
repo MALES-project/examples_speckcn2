@@ -1,4 +1,22 @@
-# Configuration File Explanation
+# Examples SpeckleCn2Profiler
+
+Here you find examples on the usage of SpeckleCn2Profiler.
+
+## Getting started
+Refer to the [SpeckleCn2Profiler: Getting started](https://github.com/MALES-project/SpeckleCn2Profiler#getting-started) section.
+
+Once you have SpeckleCn2Profiler installed, you can run any example scripts as follows:
+
+```console
+python3 example_train.py <path_to_config.yml>
+```
+
+## Examples
+
+- `example_train.py`: You'll learn how to train your ML model using SpeckleCn2Profiler.
+- `example_post.py`: You'll learn how to load a trained ML model and run some analysis on the results.
+
+## Configuration File Explanation
 
 Here we explain what it is expected in a typical `configuration.yaml` file:
 
@@ -25,7 +43,7 @@ Here we explain what it is expected in a typical `configuration.yaml` file:
 * **normalization**: How to normalize the tags: `unif`, `lin`, `log` or `zscore`.
 * **img_normalization**: if `true` normalize the pixel values of the images.
 * **dataname**: The name of the file where the preprocessed images are saved.
-* **XXX_details**: If `true` then plot the bin resolved details of `XXX` metrics 
+* **XXX_details**: If `true` then plot the bin resolved details of `XXX` metrics
 
 #### noise
 * **D**: Fraction of the field.

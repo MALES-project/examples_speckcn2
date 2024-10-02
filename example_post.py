@@ -26,6 +26,9 @@ def main(conf_name):
     # Load the model that you want to use and the weights
     model, last_model_state = sp2.setup_model(config)
     model, _ = sp2.load_model_state(model, datadirectory)
+
+    # set the model to the correct device
+    model.to(device)
     
     # Preprocess the data. If a database of the preprocess data exist, then we just load it
     all_images, all_tags, all_ensemble_ids = sp2.prepare_data(config,

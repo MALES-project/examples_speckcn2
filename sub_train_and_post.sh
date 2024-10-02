@@ -16,4 +16,5 @@ module load 2023r1
 module load python/3.9.8
 module load py-pip
 
-python Prototype.py $1
+python example_train.py $1
+python example_post.py $1

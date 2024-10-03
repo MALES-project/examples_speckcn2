@@ -22,6 +22,8 @@ preproc:
   dataname: all_images.pt
   Fried_details: true
   J_details: true
+  Scintillation_w_details: true
+  Isoplanatic_details: true
 noise:
   D: 1 # Fraction of field
   t: 0.01 # Width spider

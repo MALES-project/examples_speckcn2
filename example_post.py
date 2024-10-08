@@ -50,7 +50,7 @@ def main(conf_name):
     
     # Test to see if averaging over speckle patterns improves the results
     sp2.average_speckle_input(config, test_set, device, model, criterion, n_ensembles_to_plot=5)
-    sp2.average_speckle_output(config, test_set, device, model, criterion, n_ensembles_to_plot=20)
+    sp2.average_speckle_output(config, test_set, device, model, criterion, trimming=0.2, n_ensembles_to_plot=20)
     
     # Finally we do some postprocessing analysis
     # Plot the distribution of the screen tags

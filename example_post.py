@@ -55,7 +55,7 @@ def main(conf_name):
     # Finally we do some postprocessing analysis
     # Plot the distribution of the screen tags
     sp2.plot_J_error_details(config, test_recovered_tag_true, test_recovered_tag_pred)
-    sp2.screen_errors(config,test_cn2_pred, test_cn2_true, nbins=20)
+    sp2.screen_errors(config, device, test_cn2_pred, test_cn2_true, nbins=20)
     sp2.tags_distribution(config, train_set, test_tags, device, rescale=False)
     sp2.tags_distribution(config,
                           train_set,

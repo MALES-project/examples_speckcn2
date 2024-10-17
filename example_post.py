@@ -46,7 +46,8 @@ def main(conf_name):
     
     # Test the model
     test_tags, test_losses, test_measures, test_cn2_pred, test_cn2_true, test_recovered_tag_pred, test_recovered_tag_true = sp2.score(
-        model, test_set, device, criterion, nz, nimg_plot=20)
+        model, test_set, device, criterion, nz, nimg_plot=0)
+    sp2.plot_samples_in_ensemble(config, test_set, device, model, criterion, trimming=0.1, n_max_plots=50)
     
     # Test to see if averaging over speckle patterns improves the results
     sp2.average_speckle_input(config, test_set, device, model, criterion, n_ensembles_to_plot=5)
@@ -55,7 +56,7 @@ def main(conf_name):
     # Finally we do some postprocessing analysis
     # Plot the distribution of the screen tags
     sp2.plot_J_error_details(config, test_recovered_tag_true, test_recovered_tag_pred)
-    sp2.screen_errors(config, device, test_cn2_pred, test_cn2_true, nbins=20)
+    sp2.screen_errors(config, device, test_recovered_tag_pred, test_recovered_tag_true, nbins=20)
     sp2.tags_distribution(config, train_set, test_tags, device, rescale=False)
     sp2.tags_distribution(config,
                           train_set,

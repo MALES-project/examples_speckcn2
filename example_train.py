@@ -46,10 +46,12 @@ def main(conf_name):
     criterion = sp2.ComposableLoss(config, nz, device)
     criterion = criterion.to(device)
     optimizer = sp2.setup_optimizer(config, model)
+    # for the validation loss, manipulate the config and pass it to the ComposableLoss
+    criterion_val = sp2.ComposableLoss(config, nz, device, validation=True)
     
     # (!) Train the model
     model, average_loss = sp2.train(model, last_model_state, config, train_set,
-                                    test_set, device, optimizer, criterion)
+                                    test_set, device, optimizer, criterion, criterion_val)
     print(f'Finished Training, Loss: {average_loss:.5f}', flush=True)
 
 if __name__ == '__main__':

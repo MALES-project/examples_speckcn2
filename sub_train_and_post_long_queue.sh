@@ -4,7 +4,7 @@
 #SBATCH --output=slurm/speckcn2.out
 #SBATCH --error=slurm/speckcn2.err
 #SBATCH --partition=gpu
-#SBATCH --time=15:00:00
+#SBATCH --time=25:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=6G

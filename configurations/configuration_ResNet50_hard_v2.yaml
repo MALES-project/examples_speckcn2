@@ -35,7 +35,7 @@ noise:
   bit: 12 # bit level (sample depth)
   discretize: off # Whether to discretize the output ('on' or 'off').
 model:
-  name: Model_ResNet50_hard
+  name: Model_ResNet50_hard_v2
   type: resnet50
   save_every: 10
   pretrained: true

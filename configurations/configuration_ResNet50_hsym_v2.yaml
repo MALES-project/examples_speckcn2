@@ -36,7 +36,7 @@ noise:
   discretize: off # Whether to discretize the output ('on' or 'off').
   rotation_sym: 90
 model:
-  name: Model_ResNet50_hsym
+  name: Model_ResNet50_hsym_v2
   type: resnet50
   save_every: 10
   pretrained: true

@@ -1,3 +1,4 @@
+figure_format: pdf
 speckle:
   nscreens: 8
   hArray: [0.1, 300, 650, 1e3, 2e3, 5e3, 10e3, 20e3, 40e3]

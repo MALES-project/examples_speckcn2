@@ -48,6 +48,9 @@ def main(conf_name):
     test_tags, test_losses, test_measures, test_cn2_pred, test_cn2_true, test_recovered_tag_pred, test_recovered_tag_true = sp2.score(
         model, test_set, device, criterion, nz, nimg_plot=0)
     sp2.plot_samples_in_ensemble(config, test_set, device, model, criterion, trimming=0.1, n_max_plots=100)
+     
+    # Compute some overall statistics
+    sp2.plot_total_statistics(config, train_set, criterion, device)
     
     # Test to see if averaging over speckle patterns improves the results
     sp2.average_speckle_input(config, test_set, device, model, criterion, n_ensembles_to_plot=5)
